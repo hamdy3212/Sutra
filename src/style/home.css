@@ -1,0 +1,53 @@
+.product-container .card {
+  box-shadow: 0px 5px 5px #b2bec3;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Poppins";
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-body .card-text {
+  margin-top: auto;
+}
+.card-body button {
+  margin-top: auto;
+}
+.product-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+}
+
+@media only screen and (max-width: 750px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .product-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 40px;
+  }
+}
+.h1-title {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

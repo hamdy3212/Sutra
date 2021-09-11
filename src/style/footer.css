@@ -1,0 +1,94 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+.product-container {
+  padding-bottom: 15rem;
+}
+footer {
+  background: rgb(65, 60, 64);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.instagram {
+  cursor: pointer;
+  background: pink;
+  background: -webkit-radial-gradient(
+    33% 100% circle,
+    #515ecf 4%,
+    #9b36b7 30%,
+    #d92e7f 62%,
+    #f15245 85%,
+    #fed373
+  );
+  background: radial-gradient(
+    circle at 33% 100%,
+    #ff3be7 4%,
+    #ff3be7 28%,
+    #03ffe8 62%,
+    #f15245 85%,
+    #fed373
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5em;
+}
+.instagram:hover {
+  background: -webkit-radial-gradient(
+    33% 100% circle,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+  background: radial-gradient(
+    circle at 33% 100%,
+    #fed373 4%,
+    #f15245 30%,
+    #d92e7f 62%,
+    #9b36b7 85%,
+    #515ecf
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fa-facebook-square {
+  margin-right: 40px;
+  cursor: pointer;
+  font-size: 5em;
+  color: #3b5998;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 20%,
+    white 20%,
+    white 93.5%,
+    transparent 93%
+  );
+  background-size: 75%;
+  background-position: 70% 0;
+  background-repeat: no-repeat;
+}
+.fa-facebook-square:hover {
+  font-size: 5em;
+  color: white;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 20%,
+    #3b5998 20%,
+    #3b5998 93.5%,
+    transparent 93%
+  );
+  background-size: 75%;
+  background-position: 70% 0;
+  background-repeat: no-repeat;
+}

@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./components/Home";
+import Additem from "./components/AddProduct";
+import { Login } from "./components/Login";
+import { Signup } from "./components/Signup";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
+import { auth, fs } from "./Config/Config";
 
 function App() {
+  const deleteTodo = (id) => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        fs.collection("Products").doc(id).delete();
+      } else {
+        console.log("user is not signed in to delete todos");
+      }
+    });
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FirebaseDatabaseProvider>
+      <div id="page-container">
+        <Router>
+          <Switch>
+            <Route
+              exact
+              path="/"
+              component={() => <Home deleteTodo={deleteTodo} />}
+            />
+            <Route exact path="/additem" component={Additem} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+          </Switch>
+        </Router>
+      </div>
+    </FirebaseDatabaseProvider>
   );
 }
 
