@@ -3,8 +3,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { storage, fs } from "../Config/Config";
+import { useHistory } from "react-router-dom";
 
 const AddProduct = () => {
+  const history = useHistory();
   const [size, setSize] = useState("");
   const [material, setMaterial] = useState("");
   const [category, setCategory] = useState("Scarf");
@@ -65,7 +67,8 @@ const AddProduct = () => {
                   setUploadError("");
                   setTimeout(() => {
                     setSuccessMsg("");
-                  }, 3000);
+                    history.push("/");
+                  }, 0);
                 })
                 .catch((error) => setUploadError(error.message));
             });

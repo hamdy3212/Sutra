@@ -1,14 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { fs } from "../Config/Config";
 
 const IndividualProduct = ({ individualProduct, deleteProduct, user }) => {
-  // deleting product function
-  const handleDelete = () => {
-    // deleteTodo(individualTodo.id);
-    console.log("Hi");
-  };
   return (
     <Card>
       <Card.Img variant="top" src={individualProduct.url} />
@@ -27,7 +21,10 @@ const IndividualProduct = ({ individualProduct, deleteProduct, user }) => {
           </Button>
         )}
         {user && (
-          <Button variant="danger" onClick={handleDelete}>
+          <Button
+            variant="danger"
+            onClick={() => deleteProduct(individualProduct.ID)}
+          >
             DELETE
           </Button>
         )}
