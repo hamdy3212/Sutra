@@ -7,8 +7,9 @@ const IndividualProduct = ({ individualProduct, deleteProduct, user }) => {
     <Card>
       <Card.Img variant="top" src={individualProduct.url} />
       <Card.Body>
-        <Card.Title>{individualProduct.title}</Card.Title>
-        <Card.Text>{individualProduct.description}</Card.Text>
+        <Card.Title>{individualProduct.category}</Card.Title>
+        <Card.Text>Dimensions: {individualProduct.size}</Card.Text>
+        <Card.Text>Material: {individualProduct.material}</Card.Text>
         <Card.Text
           style={{ color: "red", fontWeight: "bold", fontSize: "18px" }}
         >

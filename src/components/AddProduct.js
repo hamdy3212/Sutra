@@ -110,12 +110,12 @@ const AddProduct = () => {
             <option>Shemise</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group controlId="Size">
+        <Form.Group controlId="Dimensions">
           <Form.Label>Size</Form.Label>
           <Form.Control
             type="text"
-            name="Size"
-            placeholder="Size"
+            name="Dimensions"
+            placeholder="Dimensions"
             onChange={(e) => setSize(e.target.value)}
             value={size}
             required

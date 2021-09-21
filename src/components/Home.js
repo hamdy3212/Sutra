@@ -7,8 +7,8 @@ import "../style/home.css";
 const Home = ({ user }) => {
   return (
     <div id="page-container">
-      <Container style={{ marginBottom: "50px" }}>
-        <h1 className="h1-title">Products</h1>
+      <Container style={{ marginBottom: "50px", marginTop: "50px" }}>
+        {/* <h1 className="h1-title">Products</h1> */}
         <div className="product-container">
           <Products user={user} />
         </div>
