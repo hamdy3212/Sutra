@@ -1,3 +1,4 @@
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import Home from "./components/Home";
 import Additem from "./components/AddProduct";
 import { Login } from "./components/Login";
@@ -56,6 +57,11 @@ function App() {
           </Switch>
         </Router>
       </div>
+      <MessengerCustomerChat
+        pageId="100889875163890"
+        appId="<APP_ID>"
+        htmlRef="<REF_STRING>"
+      />
     </FirebaseDatabaseProvider>
   );
 }
