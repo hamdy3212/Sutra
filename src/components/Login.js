@@ -5,10 +5,8 @@ import { useHistory } from "react-router-dom";
 
 export const Login = () => {
   const history = useHistory();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 

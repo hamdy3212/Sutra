@@ -19,12 +19,12 @@ const Navbar2 = ({ user }) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="ml-auto">
           <Nav className="ml-auto">
-            {/* {!user && (
+            {!user && (
               <>
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/login">Login</Nav.Link>
               </>
-            )} */}
+            )}
             {user && (
               <Nav className="me-auto">
                 <Nav.Link href="/"> {user}</Nav.Link>
