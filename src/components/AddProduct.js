@@ -7,8 +7,9 @@ import { useHistory } from "react-router-dom";
 
 const AddProduct = () => {
   const history = useHistory();
-  const [size, setSize] = useState("");
-  const [material, setMaterial] = useState("");
+  const [size, setSize] = useState("200x75");
+  const [material, setMaterial] = useState("Chiffon");
+  const [facebookLink, setFacebookLink] = useState("");
   const [category, setCategory] = useState("Scarf");
   const [price, setPrice] = useState("");
   const [imageError, setImageError] = useState("");
@@ -16,6 +17,16 @@ const AddProduct = () => {
   const [successMsg, setSuccessMsg] = useState("");
   const [uploadError, setUploadError] = useState("");
   const types = ["image/jpg", "image/jpeg", "image/png", "image/PNG"];
+  const handleCategory = (e) => {
+    setCategory(e.target.value);
+    if (e.target.value === "Scarf") {
+      setMaterial("Chiffon");
+      setSize("200x75");
+    } else if (e.target.value === "Shemise") {
+      setMaterial("Cotton");
+      setSize("Oversize");
+    }
+  };
   const handleProductImg = (e) => {
     let selectedFile = e.target.files[0];
     if (selectedFile) {
@@ -55,12 +66,14 @@ const AddProduct = () => {
                   size,
                   material,
                   price: Number(price),
+                  facebookLink,
                   url,
                 })
                 .then(() => {
                   setSuccessMsg("Product added successfully");
                   setSize("");
                   setMaterial("");
+                  setFacebookLink("");
                   setPrice("");
                   document.getElementById("file").value = "";
                   setImageError("");
@@ -102,7 +115,8 @@ const AddProduct = () => {
           <Form.Control
             as="select"
             name="Category"
-            onChange={(e) => setCategory(e.target.value)}
+            // onChange={(e) => setCategory(e.target.value)}
+            onChange={(e) => handleCategory(e)}
             value={category}
             required
           >
@@ -110,26 +124,26 @@ const AddProduct = () => {
             <option>Shemise</option>
           </Form.Control>
         </Form.Group>
-        <Form.Group controlId="Dimensions">
-          <Form.Label>Size</Form.Label>
-          <Form.Control
-            type="text"
-            name="Dimensions"
-            placeholder="Dimensions"
-            onChange={(e) => setSize(e.target.value)}
-            value={size}
-            required
-          />
-        </Form.Group>
         <Form.Group controlId="Material">
           <Form.Label>Material</Form.Label>
           <Form.Control
             type="text"
             name="Material"
             placeholder="Material"
-            onChange={(e) => setMaterial(e.target.value)}
             value={material}
             required
+            readOnly
+          />
+        </Form.Group>
+        <Form.Group controlId="Dimensions">
+          <Form.Label>Size</Form.Label>
+          <Form.Control
+            type="text"
+            name="Dimensions"
+            placeholder="Dimensions"
+            value={size}
+            required
+            readOnly
           />
         </Form.Group>
         <Form.Group controlId="Price">
@@ -143,8 +157,19 @@ const AddProduct = () => {
             required
           />
         </Form.Group>
-        <Form.Group controlId="Image">
-          <Form.Label>Image URL</Form.Label>
+        <Form.Group controlId="facebook">
+          <Form.Label>Facebook Product Link</Form.Label>
+          <Form.Control
+            type="text"
+            name="facebookLink"
+            placeholder="Facebook Link"
+            onChange={(e) => setFacebookLink(e.target.value)}
+            value={facebookLink}
+            required
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Image</Form.Label>
           <Form.Control
             type="file"
             name="image"

@@ -17,9 +17,11 @@ const IndividualProduct = ({ individualProduct, deleteProduct, user }) => {
         </Card.Text>
 
         {!user && (
-          <Button variant="info" size="lg">
-            Order Now
-          </Button>
+          <a href={individualProduct.facebookLink} target="_blank">
+            <Button variant="info" size="lg">
+              Order Now
+            </Button>
+          </a>
         )}
         {user && (
           <Button
